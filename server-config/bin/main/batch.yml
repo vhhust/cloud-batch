@@ -1,0 +1,13 @@
+external:
+  property: Yo motherfuckers #from ${eureka.instance.instance_id}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver

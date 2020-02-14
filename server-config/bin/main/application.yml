@@ -1,0 +1,14 @@
+#spring:
+#  cloud:
+#    config:
+#      server:
+#        git:
+#          uri: https://github.com/vhhust/cloud-batch/config
+
+server:
+  port: 9999
+
+#use native to include property files inside server-config instead of git
+spring:
+  profiles:
+    active: native
