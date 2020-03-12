@@ -1,5 +1,5 @@
 external:
-  property: Yo motherfuckers #from ${eureka.instance.instance_id}
+  property: Hello #from ${eureka.instance.instance_id}
 
 management:
   endpoints:
@@ -9,5 +9,10 @@ management:
 
 spring:
   datasource:
-    url: jdbc:h2:mem:testdb
-    driverClassName: org.h2.Driver
+    url: jdbc:mysql://localhost:3306/springdb?serverTimezone=UTC&useLegacyDatetimeCode=false
+    username: root
+    password: 1234
+  batch:
+    initialize-schema: always #Avoids creation of job instance tables
+    job:
+      enabled: false #Avoids auto-execution of job when starting micro
